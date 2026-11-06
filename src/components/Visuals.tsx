@@ -1,0 +1,259 @@
+import { Check, Terminal, Zap } from 'lucide-react';
+import {
+  SiAndroid,
+  SiAngular,
+  SiAntdesign,
+  SiApple,
+  SiBootstrap,
+  SiCss,
+  SiDotnet,
+  SiFramework7,
+  SiHtml5,
+  SiIonic,
+  SiJavascript,
+  SiMui,
+  SiQuasar,
+  SiReact,
+  SiTailwindcss,
+  SiVuedotjs,
+  SiVuetify,
+} from '@icons-pack/react-simple-icons';
+
+export function BrandMark({ compact = false }: { compact?: boolean }) {
+  return (
+    <span className={`brand-mark ${compact ? 'brand-mark--compact' : ''}`}>
+      <svg viewBox="0 0 76 64" aria-hidden="true">
+        <path d="M4 4h20v56H4zM52 4h20v56H52zM4 4h20l48 56H52z" fill="currentColor" />
+        <path d="M8 4h12l48 56H56z" fill="var(--logo-cut, #fff)" />
+      </svg>
+      {!compact && <span>Napacitor</span>}
+    </span>
+  );
+}
+
+function MiniApp({ phone = false }: { phone?: boolean }) {
+  return (
+    <div className={`mini-app ${phone ? 'mini-app--phone' : ''}`}>
+      <div className="mini-app__top">
+        <span className="mini-app__logo"><BrandMark compact /></span>
+        <span className="mini-app__search" />
+        <span className="mini-app__avatar" />
+      </div>
+      <div className="mini-app__body">
+        <div className="mini-app__sidebar">
+          <i /><i /><i /><i />
+        </div>
+        <div className="mini-app__content">
+          <span className="mock-overline">WORKSPACE / 04</span>
+          <strong>One codebase.<br />Every screen.</strong>
+          <div className="mock-action">Run everywhere <span>→</span></div>
+          <div className="mock-panels">
+            <div><small>WEB</small><b>→</b><small>NATIVE</small></div>
+            <div className="mock-chart"><i /><i /><i /><i /><i /></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+const heroLayers = [
+  '/hero_img_layer1.png',
+  '/hero_img_layer2.png',
+  '/hero_img_layer3.png',
+  '/hero_img_layer4.png',
+];
+
+export function ProductVisual() {
+  return (
+    <div className="hero-product" aria-label="Napacitor 产品分层概念图：Web 应用、.NET MAUI 运行时与多平台支持" role="img">
+      {heroLayers.map((src) => (
+        <img className="hero-layer" src={src} alt="" aria-hidden="true" key={src} />
+      ))}
+    </div>
+  );
+}
+
+export function BootDevices({ replayKey = 0 }: { replayKey?: number }) {
+  return (
+    <div className="boot-stage" key={replayKey} aria-label="笔记本、平板电脑和手机依次启动 Napacitor 应用" role="img">
+      <div className="boot-stage__grid" aria-hidden="true" />
+      <svg className="boot-rays" viewBox="0 0 680 360" fill="none" aria-hidden="true">
+        <defs><linearGradient id="bootRay" x1="0" y1="0" x2="1" y2="0"><stop stopColor="#64f4d2"/><stop offset=".5" stopColor="#f5f871"/><stop offset="1" stopColor="#ff5cb8"/></linearGradient></defs>
+        <path className="boot-ray" d="M88 260C250 110 420 108 602 248" stroke="url(#bootRay)" strokeWidth="1.5" strokeDasharray="5 8" />
+      </svg>
+      <div className="boot-device-wrap boot-laptop-wrap">
+        <div className="boot-laptop">
+          <div className="boot-screen"><BootScreen /></div>
+          <div className="boot-laptop-base" />
+        </div>
+        <span>Windows / macOS</span>
+      </div>
+      <div className="boot-device-wrap boot-tablet-wrap">
+        <div className="boot-tablet"><div className="boot-screen"><BootScreen /></div></div>
+        <span>iPadOS / Android</span>
+      </div>
+      <div className="boot-device-wrap boot-phone-wrap">
+        <div className="boot-phone"><div className="boot-screen"><BootScreen /></div></div>
+        <span>iOS / Android</span>
+      </div>
+      <div className="boot-status" aria-hidden="true"><i /><span>RUNTIME READY</span></div>
+    </div>
+  );
+}
+
+function BootScreen() {
+  return (
+    <div className="boot-screen__content">
+      <BrandMark compact />
+      <b>Napacitor</b>
+      <div className="boot-progress"><i /></div>
+      <small>WEB → NATIVE</small>
+    </div>
+  );
+}
+
+const techLogos = [
+  { name: 'JavaScript', Icon: SiJavascript, color: '#F7DF1E', dark: true },
+  { name: 'HTML5', Icon: SiHtml5, color: '#E34F26' },
+  { name: 'CSS', Icon: SiCss, color: '#1572B6' },
+  { name: 'React', Icon: SiReact, color: '#61DAFB' },
+  { name: 'Angular', Icon: SiAngular, color: '#DD0031' },
+  { name: 'Vue', Icon: SiVuedotjs, color: '#42B883' },
+  { name: 'Ant Design', Icon: SiAntdesign, color: '#1677FF' },
+  { name: 'Ionic', Icon: SiIonic, color: '#3880FF' },
+  { name: 'Framework7', Icon: SiFramework7, color: '#EE350F' },
+  { name: 'MUI', Icon: SiMui, color: '#007FFF' },
+  { name: 'Bootstrap', Icon: SiBootstrap, color: '#7952B3' },
+  { name: 'Tailwind CSS', Icon: SiTailwindcss, color: '#06B6D4' },
+  { name: 'Vuetify', Icon: SiVuetify, color: '#1867C0' },
+  { name: 'Quasar', Icon: SiQuasar, color: '#1976D2' },
+];
+
+export function TechLogoWall() {
+  return (
+    <div className="tech-wall" aria-label="支持原生 Web 技术、主流框架和组件库">
+      <div className="tech-wall__signal" aria-hidden="true"><span>ANY WEB APP</span><i /></div>
+      <div className="tech-grid">
+        {techLogos.map(({ name, Icon, color, dark }, index) => (
+          <div className={`tech-logo ${dark ? 'tech-logo--dark' : ''}`} key={name} style={{ '--logo-color': color, '--logo-index': index } as React.CSSProperties}>
+            <Icon size={30} color={color} aria-hidden="true" />
+            <span>{name}</span>
+          </div>
+        ))}
+      </div>
+      <p>以及你正在使用的下一套 Web 工具。</p>
+    </div>
+  );
+}
+
+export function PluginDoodle({ type }: { type: string }) {
+  const drawing = (() => {
+    switch (type) {
+      case 'camera': return <><path d="M14 25l5-7h14l5 7h10v25H12V25z"/><circle cx="30" cy="37" r="8"/><path d="M43 30h1M19 14l2-4h10"/></>;
+      case 'geolocation': return <><path d="M47 19c0 15-17 32-17 32S13 34 13 19a17 17 0 1 1 34 0z"/><circle cx="30" cy="19" r="6"/><path d="M9 46l-3 5M50 45l4 4"/></>;
+      case 'filesystem': return <><path d="M10 17h15l5 6h20v27H10z"/><path d="M10 23V11h15l5 6M18 34h23M18 41h16"/></>;
+      case 'preferences': return <><path d="M11 16h38M11 30h38M11 44h38"/><circle cx="22" cy="16" r="5"/><circle cx="39" cy="30" r="5"/><circle cx="27" cy="44" r="5"/></>;
+      case 'share': return <><circle cx="43" cy="14" r="7"/><circle cx="15" cy="31" r="7"/><circle cx="43" cy="47" r="7"/><path d="M21 27l15-9M21 35l15 8"/></>;
+      default: return <><rect x="17" y="14" width="30" height="36" rx="4"/><path d="M25 10h25a4 4 0 0 1 4 4v27M24 25h16M24 33h16M24 41h10"/></>;
+    }
+  })();
+  return <svg className="plugin-doodle" viewBox="0 0 60 60" fill="none" aria-hidden="true"><g>{drawing}</g><g className="doodle-echo">{drawing}</g></svg>;
+}
+
+const cliCommands = [
+  ['nap init', '创建配置'],
+  ['nap add maui', '生成宿主'],
+  ['nap sync', '同步 Web + 插件'],
+  ['nap build', '构建目标'],
+  ['nap run', '运行应用'],
+];
+
+export function CliVisual() {
+  return (
+    <div className="cli-visual" aria-label="Napacitor CLI 自动化命令链">
+      <div className="cli-window">
+        <div className="cli-window__bar"><span><Terminal size={15} /> project / terminal</span><i /><i /><i /></div>
+        <div className="cli-flow">
+          {cliCommands.map(([command, description], index) => (
+            <div className="cli-command" key={command} style={{ '--command-index': index } as React.CSSProperties}>
+              <span className="cli-command__check"><Check size={13} /></span>
+              <code><i>$</i> npx {command}</code>
+              <small>{description}</small>
+            </div>
+          ))}
+        </div>
+        <div className="cli-result"><span><i /> PROCESS COMPLETE</span><code>target: android · configuration: Release</code></div>
+      </div>
+      <div className="agent-note" aria-hidden="true">
+        <div><Zap size={17} /><span>AI AGENT / CI PIPELINE</span></div>
+        <p>同一条显式命令链，<br />人能读懂，自动化也能执行。</p>
+        <div className="agent-note__line"><i /><i /><i /></div>
+      </div>
+    </div>
+  );
+}
+
+export function EcosystemVisual() {
+  return (
+    <div className="ecosystem-visual" aria-label="JavaScript 与 .NET 生态通过 Napacitor 桥接">
+      <div className="eco-orbit eco-orbit--one" aria-hidden="true" />
+      <div className="eco-orbit eco-orbit--two" aria-hidden="true" />
+      <div className="eco-node eco-node--js"><SiJavascript size={34} color="#F7DF1E" /><strong>JavaScript</strong><span>npm · TypeScript · Web</span></div>
+      <div className="eco-node eco-node--dotnet"><SiDotnet size={38} color="#A390F2" /><strong>.NET</strong><span>C# · MAUI · Volo.Abp</span></div>
+      <div className="eco-bridge"><BrandMark compact /><span>JSInterop</span><i>⇄</i><b>NAP</b></div>
+      <span className="eco-token eco-token--one">React</span>
+      <span className="eco-token eco-token--two">Volo.Abp</span>
+      <span className="eco-token eco-token--three">npm</span>
+      <span className="eco-token eco-token--four">.NET MAUI</span>
+    </div>
+  );
+}
+
+const heroPlatformIcons = [
+  {
+    name: 'Android',
+    path: 'M250.446945 759.723127c0 34.610916 27.330336 62.791165 60.96846 62.791165h44.016279a60.835341 60.835341 0 0 0-2.303981 16.486265v125.526011c0 32.818931 25.881388 59.468312 57.773606 59.468312 31.907578 0 57.783846-26.644262 57.783846-59.468312V839.010797c0-5.729233-0.844793-11.263908-2.303981-16.491385h107.29384a60.835341 60.835341 0 0 0-2.303981 16.486265v125.526011c0 32.818931 25.876268 59.468312 57.773606 59.468312s57.783846-26.644262 57.783847-59.468312V839.010797c0-5.729233-0.844793-11.263908-2.319341-16.491385h44.016279c33.653484 0 60.97358-28.164889 60.97358-62.791165V323.717742H250.421345v436.005385z m-96.306411-436.005385c-31.907578 0-57.768486 26.613542-57.768486 59.447833v254.328794c0 32.834291 25.860908 59.447833 57.773606 59.447833 31.892218 0 57.768486-26.613542 57.768487-59.447833V383.180935c0-32.854771-25.876268-59.468312-57.768487-59.468313z m731.72904 0c-31.912698 0-57.753126 26.613542-57.753126 59.447833v254.328794c0 32.834291 25.840428 59.447833 57.753126 59.447833s57.753126-26.613542 57.753127-59.447833V383.180935c0-32.854771-25.845548-59.468312-57.753127-59.468313z m-233.296007-237.965408l10.844071-16.742263 10.685353-16.511865 24.022843-37.068496c2.943976-4.561883 1.725426-10.700712-2.657258-13.741967a9.466802 9.466802 0 0 0-13.383571 2.749417l-25.722669 39.746234-10.844071 16.711543-10.97207 16.941942c-34.800355-13.885326-73.604516-21.672782-114.548821-21.672783-40.928944 0-79.748466 7.787456-114.518101 21.657423l-10.95671-16.941941-10.813351-16.711543L357.925103 4.421801a9.471922 9.471922 0 0 0-13.36821-2.749418c-4.403164 3.036135-5.616594 9.180085-2.657258 13.736847l23.992123 37.073616 10.700712 16.506745 10.844071 16.742263c-81.71453 39.172799-137.010077 113.38659-137.010076 198.331813h539.136699c0.02048-84.929864-55.275067-159.138535-136.989597-198.311333zM404.486002 204.811837c-15.964029 0-28.886803-13.322131-28.886804-29.731596s12.922774-29.700876 28.886804-29.700876c15.948669 0 28.886803 13.291411 28.886803 29.700876S420.434671 204.811837 404.480882 204.811837z m231.068825 0c-15.958909 0-28.886803-13.322131-28.886803-29.731596s12.927894-29.700876 28.886803-29.700876 28.871443 13.291411 28.871443 29.700876-12.907414 29.731596-28.871443 29.731596z',
+  },
+  {
+    name: 'iOS',
+    path: 'M905.714286 694.285714q-22.285714 71.428571-70.285715 142.857143-73.714286 112-146.857142 112-28 0-80-18.285714-49.142857-18.285714-86.285715-18.285714-34.857143 0-81.142857 18.857142-46.285714 19.428571-75.428571 19.428572-86.857143 0-172-148-84-149.142857-84-287.428572 0-130.285714 64.571428-213.714285 64-82.285714 162.285715-82.285715 41.142857 0 101.142857 17.142858 59.428571 17.142857 78.857143 17.142857 25.714286 0 81.714285-19.428572 58.285714-19.428571 98.857143-19.428571 68 0 121.714286 37.142857 29.714286 20.571429 59.428571 57.142857-45.142857 38.285714-65.142857 67.428572-37.142857 53.714286-37.142857 118.285714 0 70.857143 39.428571 127.428571t90.285715 72zM690.857143 24q0 34.857143-16.571429 77.714286-17.142857 42.857143-53.142857 78.857143-30.857143 30.857143-61.714286 41.142857-21.142857 6.285714-59.428571 9.714285 1.714286-85.142857 44.571429-146.857142 42.285714-61.142857 142.857142-84.571429 0.571429 1.714286 1.428572 6.285714t1.428571 6.285715q0 2.285714 0.285715 5.714285t0.285714 5.714286z',
+  },
+  {
+    name: 'macOS',
+    path: 'M557.1 361.3v-7.4l-22.9 1.6c-6.5 0.4-11.4 1.8-14.7 4.1-3.3 2.4-4.9 5.6-4.9 9.8 0 4.1 1.6 7.3 4.9 9.7 3.2 2.4 7.6 3.6 13 3.6 3.5 0 6.7-0.5 9.7-1.6 3-1.1 5.6-2.5 7.8-4.4 2.2-1.9 3.9-4.1 5.2-6.7 1.3-2.7 1.9-5.6 1.9-8.7zM512 64.2C262.1 64.2 64.2 262.1 64.2 512S262.1 959.8 512 959.8 959.8 761.9 959.8 512 761.9 64.2 512 64.2z m86.9 265.4c2.1-5.9 5.1-11 9-15.3 3.9-4.2 8.5-7.5 13.9-9.8s11.5-3.4 18.2-3.4c6 0 11.5 0.9 16.3 2.7 4.9 1.8 9 4.2 12.5 7.3 3.5 3 6.2 6.6 8.3 10.6 2 4.1 3.2 8.4 3.6 12.9h-18c-0.5-2.5-1.3-4.8-2.4-6.9-1.2-2.1-2.7-4-4.6-5.6-1.9-1.6-4.2-2.8-6.7-3.7-2.6-0.9-5.5-1.3-8.7-1.3-3.8 0-7.3 0.8-10.4 2.3-3.1 1.5-5.8 3.7-8 6.5s-3.9 6.2-5.1 10.3c-1.2 4-1.8 8.5-1.8 13.4 0 5.1 0.6 9.7 1.8 13.7 1.2 4 2.9 7.4 5.2 10.2 2.2 2.8 4.9 4.9 8.1 6.4 3.1 1.5 6.6 2.2 10.3 2.2 6.2 0 11.2-1.4 15-4.3 3.9-2.9 6.4-7.1 7.6-12.7h18c-0.5 4.9-1.9 9.4-4.1 13.5-2.2 4.1-5.1 7.5-8.5 10.4-3.5 2.9-7.6 5.1-12.4 6.6-4.7 1.6-10 2.4-15.6 2.4-6.7 0-12.8-1.1-18.3-3.3-5.4-2.2-10.1-5.4-14-9.6-3.9-4.2-6.9-9.2-9-15.2-2.1-6-3.2-12.7-3.2-20.2-0.1-7.5 0.9-14.1 3-20.1z m-255.8-27.2h18v16h0.3c1.1-2.7 2.5-5.1 4.3-7.1 1.8-2.1 3.8-3.9 6.1-5.4 2.3-1.5 4.9-2.6 7.6-3.4 2.8-0.8 5.7-1.2 8.8-1.2 6.6 0 12.2 1.6 16.7 4.7 4.6 3.2 7.8 7.7 9.7 13.6h0.5c1.2-2.8 2.8-5.4 4.8-7.6 2-2.2 4.2-4.2 6.8-5.8 2.5-1.6 5.4-2.8 8.4-3.6 3-0.8 6.2-1.3 9.6-1.3 4.6 0 8.8 0.7 12.6 2.2 3.8 1.5 7 3.6 9.7 6.3 2.7 2.7 4.8 6 6.2 9.8 1.4 3.8 2.2 8.1 2.2 12.8v64.3h-18.8V337c0-6.2-1.6-11-4.8-14.4-3.2-3.4-7.7-5.1-13.6-5.1-2.9 0-5.5 0.5-8 1.5-2.4 1-4.5 2.4-6.2 4.3-1.7 1.8-3.1 4-4.1 6.6-1 2.5-1.5 5.3-1.5 8.4v58.6H400v-61.4c0-2.7-0.4-5.2-1.3-7.4-0.8-2.2-2-4.1-3.6-5.7-1.6-1.6-3.5-2.8-5.7-3.6-2.2-0.8-4.7-1.3-7.5-1.3-2.9 0-5.6 0.5-8.1 1.6s-4.6 2.6-6.3 4.5c-1.8 1.9-3.2 4.2-4.1 6.8-0.9 2.6-2.5 5.4-2.5 8.5v57.9h-17.8v-94.4zM384 754.3c-82.6 0-134.3-57.4-134.3-148.9S301.4 456.3 384 456.3s134.1 57.6 134.1 149.1S466.5 754.3 384 754.3z m152.8-357.7c-3 0.8-6.2 1.2-9.3 1.2-4.7 0-9-0.7-12.9-2-3.9-1.3-7.3-3.2-10.1-5.7-2.8-2.4-5-5.4-6.6-8.8-1.6-3.5-2.4-7.3-2.4-11.5 0-8.3 3.1-14.8 9.3-19.4 6.2-4.7 15.1-7.4 26.8-8.1l25.5-1.5v-7.3c0-5.4-1.7-9.6-5.2-12.4-3.5-2.8-8.3-4.3-14.7-4.3-2.5 0-4.9 0.3-7.1 0.9-2.2 0.6-4.1 1.6-5.8 2.7-1.7 1.2-3.1 2.6-4.2 4.3-1.1 1.6-1.9 3.5-2.3 5.5h-17.7c0.1-4.2 1.1-8 3.1-11.6s4.6-6.6 7.9-9.2 7.3-4.6 11.8-6.1c4.5-1.4 9.5-2.2 14.8-2.2 5.7 0 10.9 0.7 15.6 2.2 4.7 1.5 8.7 3.5 12 6.2 3.3 2.7 5.8 5.9 7.6 9.7 1.8 3.8 2.7 8.1 2.7 12.7v64.8h-18V381h-0.5c-1.3 2.5-3 4.9-5.1 6.9-2.1 2.1-4.4 3.8-6.9 5.3-2.4 1.5-5.2 2.6-8.3 3.4z m118.8 357.7c-63 0-105.8-33-108.7-84.8h41c3.2 29.6 31.8 49.2 71 49.2 37.6 0 64.6-19.6 64.6-46.4 0-23.2-16.4-37.2-54.4-46.8l-37-9.2c-53.2-13.2-77.4-37.4-77.4-77.2 0-49 42.8-83 103.7-83 59.6 0 101.1 34.2 102.7 83.4h-40.6c-2.8-29.6-27-47.8-63-47.8-35.8 0-60.6 18.4-60.6 45 0 21 15.6 33.4 53.6 43l31.2 7.8c59.4 14.4 83.8 37.8 83.8 79.8 0 53.6-42.3 87-109.9 87zM384 493c-56.6 0-91.9 43.4-91.9 112.3 0 68.8 35.4 112.1 91.9 112.1 56.4 0 91.9-43.4 91.9-112.1 0-68.9-35.6-112.3-91.9-112.3z',
+  },
+  {
+    name: 'Windows',
+    path: 'M85.333333 128 469.333333 128 469.333333 512 85.333333 512 85.333333 128M469.333333 938.666667 85.333333 938.666667 85.333333 554.666667 469.333333 554.666667 469.333333 938.666667M896 128 896 512 512 512 512 128 896 128M896 938.666667 512 938.666667 512 554.666667 896 554.666667 896 938.666667Z',
+  },
+];
+
+export function HeroPlatforms() {
+  return (
+    <div className="hero-platforms" aria-label="支持 Android、iOS、macOS 与 Windows 平台">
+      {heroPlatformIcons.map(({ name, path }) => (
+        <span className="hero-platform" key={name}>
+          <svg viewBox="0 0 1024 1024" fill="currentColor" aria-hidden="true"><path d={path} /></svg>
+          {name}
+        </span>
+      ))}
+    </div>
+  );
+}
+
+export function PlatformVisual() {
+  return (
+    <div className="platform-visual" aria-label="Android、iOS、Windows 与 macOS 多平台支持">
+      <div className="platform-halo" aria-hidden="true" />
+      <div className="platform-device platform-device--desktop">
+        <div className="platform-device__screen"><MiniApp /></div><div className="platform-device__stand" />
+      </div>
+      <div className="platform-device platform-device--phone"><MiniApp phone /></div>
+      <div className="platform-os platform-os--android"><SiAndroid size={20} color="#64F4D2" /><span>Android</span></div>
+      <div className="platform-os platform-os--apple"><SiApple size={20} color="#F7F4FF" /><span>iOS · macOS</span></div>
+      <div className="platform-os platform-os--windows"><svg width="19" height="19" viewBox="0 0 24 24" fill="#75B9FF" aria-hidden="true"><path d="M2 4.5 11 3v8H2zm11-1.7L22 1v10h-9zM2 13h9v8l-9-1.5zm11 0h9v10l-9-1.8z"/></svg><span>Windows</span></div>
+      <div className="platform-runtime"><BrandMark compact /><span>ONE C# RUNTIME</span></div>
+    </div>
+  );
+}

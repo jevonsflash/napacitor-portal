@@ -1,0 +1,86 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * files set the primary brand color to Napacitor purple (#512BD4).
+ *
+ * Color shades are derived from the primary color following the
+ * Infima convention (https://infima.dev/docs/css/palette).
+ */
+:root {
+  --ifm-color-primary: #512bd4;
+  --ifm-color-primary-dark: #4a27c2;
+  --ifm-color-primary-darker: #4222ab;
+  --ifm-color-primary-darkest: #351b8a;
+  --ifm-color-primary-light: #6745dc;
+  --ifm-color-primary-lighter: #7a5ee3;
+  --ifm-color-primary-lightest: #9a86ef;
+  --ifm-color-primary-contrast-background: #ecf0ff;
+  --ifm-link-hover-color: #351b8a;
+  --ifm-navbar-link-hover-color: #512bd4;
+  --ifm-menu-color-active: #512bd4;
+  --ifm-tabs-color-active: #512bd4;
+  --ifm-toc-link-color: #45434e;
+  --ifm-toc-link-color-active: #512bd4;
+  --ifm-breadcrumb-color-active: #512bd4;
+  --ifm-blockquote-color: #4222ab;
+  --docusaurus-tag-link-border: #512bd4;
+}
+
+html[data-theme='dark'] {
+  --ifm-color-primary: #a390f2;
+  --ifm-color-primary-dark: #8f78ef;
+  --ifm-color-primary-darker: #8168ec;
+  --ifm-color-primary-darkest: #6745dc;
+  --ifm-color-primary-light: #b0a0f5;
+  --ifm-color-primary-lighter: #bcaef8;
+  --ifm-color-primary-lightest: #d0c6fb;
+  --ifm-color-primary-contrast-background: #241c46;
+  --ifm-link-hover-color: #d0c6fb;
+  --ifm-navbar-link-hover-color: #a390f2;
+  --ifm-menu-color-active: #a390f2;
+  --ifm-tabs-color-active: #a390f2;
+  --ifm-toc-link-color: #b6b2c2;
+  --ifm-toc-link-color-active: #a390f2;
+  --ifm-breadcrumb-color-active: #a390f2;
+  --ifm-blockquote-color: #b0a0f5;
+  --docusaurus-tag-link-border: #a390f2;
+}
+
+/* Make the active navbar item use the brand color. */
+.navbar__link--active,
+.navbar__link:hover {
+  color: var(--ifm-color-primary);
+}
+
+/* Sidebar active link keeps the brand color in both modes. */
+.menu__link--active,
+.menu__link:hover {
+  color: var(--ifm-color-primary);
+}
+
+/* Pagination arrows and edit links. */
+.pagination-nav__link:hover {
+  border-color: var(--ifm-color-primary);
+}
+
+/* Buttons keep a strong brand presence. */
+.button--primary {
+  --ifm-button-background-color: #512bd4;
+  --ifm-button-border-color: #512bd4;
+  --ifm-button-color: #ffffff;
+}
+
+.button--primary:hover {
+  --ifm-button-background-color: #4222ab;
+  --ifm-button-border-color: #4222ab;
+}
+
+html[data-theme='dark'] .button--primary {
+  --ifm-button-background-color: #6745dc;
+  --ifm-button-border-color: #6745dc;
+  --ifm-button-color: #ffffff;
+}
+
+html[data-theme='dark'] .button--primary:hover {
+  --ifm-button-background-color: #7a5ee3;
+  --ifm-button-border-color: #7a5ee3;
+}
