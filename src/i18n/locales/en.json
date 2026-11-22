@@ -1,0 +1,152 @@
+{
+  "meta": {
+    "title": "Napacitor | Cross-platform native runtime"
+  },
+  "common": {
+    "skipLink": "Skip to main content",
+    "homeLabel": "Napacitor home",
+    "mainNav": "Main navigation",
+    "themeToLight": "Switch to light theme",
+    "themeToDark": "Switch to dark theme",
+    "menuClose": "Close navigation menu",
+    "menuOpen": "Open navigation menu",
+    "languageToggle": "Switch language",
+    "docs": "Docs",
+    "github": "GitHub"
+  },
+  "nav": {
+    "quickstart": "Quick Start",
+    "capabilities": "Capabilities",
+    "scenarios": "Use Cases"
+  },
+  "hero": {
+    "titleLine2": "A cross-platform native runtime for web apps, built on .NET MAUI.",
+    "description": "Use modern web tooling to build high-performance native apps for Android, iOS, Windows and macOS — all powered by a single C# runtime.",
+    "quickstart": "Quick Start",
+    "browseDocs": "Browse the docs",
+    "platformsLabel": "Supports Android, iOS, macOS and Windows",
+    "productAlt": "Napacitor layered product concept: web app, .NET MAUI runtime and multi-platform support"
+  },
+  "quickstart": {
+    "title": "Quick Start",
+    "bash": "bash",
+    "copy": "Copy",
+    "copied": "Copied",
+    "copyStep": "Copy step {{step}} commands",
+    "copiedStatus": "Step {{step}} commands copied",
+    "steps": {
+      "01": { "title": "Drop Napacitor into any existing web app." },
+      "02": {
+        "title": "Init, sync, and scaffold the native runtime",
+        "description": "Specify the app ID, name, and web asset directory. Napacitor generates a MAUI project and bundles plugins automatically."
+      },
+      "03": {
+        "title": "Run on any platform",
+        "description": "Pick a target platform: android / ios / maccatalyst / windows."
+      }
+    }
+  },
+  "capabilities": {
+    "title": "Core Capabilities",
+    "description": "Build apps with the web technologies you already know — running equally on iOS, Android and the Web, accessing each platform's native SDKs, and powering the native layer with the .NET ecosystem.",
+    "items": {
+      "web": {
+        "title": "Universal Apps",
+        "description": "Build web-based applications that run just as well on iOS, Android, and as Progressive Web Apps."
+      },
+      "native": {
+        "title": "Native Access",
+        "description": "Access the full native SDKs on every platform, and ship easily to the App Store, Google Play, or Microsoft Store."
+      },
+      "dotnet": {
+        "title": "Powered by .NET",
+        "description": "Keep using npm, TypeScript, and the frameworks you know for the UI layer; bring the C# ecosystem and engineering practices to the native side."
+      }
+    }
+  },
+  "webFeature": {
+    "title": "Works with any web build",
+    "titleAccent": "without changing your stack",
+    "p1": "Native JavaScript, HTML and CSS, or React, Angular, Vue — if it builds to web assets, it runs in Napacitor's native host.",
+    "p2": "Keep using Ant Design Mobile, Ionic or Framework7, or pick MUI, Bootstrap, Tailwind CSS, Vuetify, Quasar and other component ecosystems you know.",
+    "templates": "View app templates",
+    "wallLabel": "Supports native web technologies, popular frameworks and component libraries",
+    "wallFooter": "And whatever web tools you reach for next."
+  },
+  "plugins": {
+    "title": "Plugin System",
+    "description": "Every official plugin wraps .NET MAUI native APIs into a consistent, Promise-based JavaScript interface. You can also build custom plugins as needed.",
+    "browseAll": "Browse all official plugins",
+    "items": {
+      "camera": { "description": "Capture photos and video and pick media, calling system capabilities through a consistent Promise API." },
+      "geolocation": { "description": "Get the current location and continuously track the device's position." },
+      "filesystem": { "description": "Access app directories, bundled files and the system file picker." },
+      "preferences": { "description": "Save app settings and user preferences with lightweight key-value storage." },
+      "share": { "description": "Invoke the system share sheet to hand content off to other apps." },
+      "clipboard": { "description": "Read and write the system clipboard to pass text between apps." }
+    }
+  },
+  "docs": {
+    "title": "Next steps",
+    "items": {
+      "install": { "title": "Install Napacitor", "description": "From environment setup to first run — build your first Napacitor app." },
+      "cli": { "title": "CLI Reference", "description": "Complete commands and options for init, sync, build, run and assets." },
+      "apis": { "title": "Plugin APIs", "description": "Browse the TypeScript interfaces and platform behavior of official plugins." }
+    }
+  },
+  "scenarios": {
+    "tag": "Use case · {{industry}}",
+    "items": {
+      "enterprise": {
+        "industry": "Enterprise Systems",
+        "title": "One business frontend for desk and field",
+        "description": "Reuse existing web forms and business UI so desktop clients and mobile devices share one set of product logic."
+      },
+      "industrial": {
+        "industry": "Industrial Floor",
+        "title": "Bring device capabilities to touch terminals",
+        "description": "Connect familiar web UI to the real floor through device, file and sensor plugins."
+      },
+      "retail": {
+        "industry": "Retail Stores",
+        "title": "From checkout desktop to staff tablet",
+        "description": "Unify store UI and interaction for a consistent experience across screens."
+      },
+      "education": {
+        "industry": "Education",
+        "title": "Bring courseware to more classrooms",
+        "description": "Take existing coursework and interactive pages to classroom tablets, student phones and home computers."
+      },
+      "productivity": {
+        "industry": "Productivity Tools",
+        "title": "Web iteration speed, desktop capability",
+        "description": "Evolve the UI fast with JavaScript; connect files, windows and system services with .NET."
+      },
+      "engineering": {
+        "industry": "Team Engineering",
+        "title": "Bake cross-platform delivery into automation",
+        "description": "Bring the CLI into scripts and CI to repeatedly sync, build, clean and run."
+      }
+    }
+  },
+  "cta": {
+    "line1": "Start using Napacitor now,",
+    "line2": "add native capabilities to your web app",
+    "github": "View on GitHub"
+  },
+  "footer": {
+    "product": "Product",
+    "resources": "Resources",
+    "project": "Project",
+    "napacitor": "Napacitor",
+    "vcontrol": "V-Control — an out-of-the-box .NET MAUI component library",
+    "devDocs": "Napacitor docs",
+    "mauiDocs": ".NET Multi-Platform App UI docs",
+    "starters": "Starters",
+    "issues": "Issue tracker",
+    "releases": "Releases",
+    "rights": "© 2026 Napacitor. All rights reserved.",
+    "icp": "ICP 粤ICP备19056721号",
+    "backToTop": "Back to top ↑"
+  }
+}

@@ -1,12 +1,9 @@
-import { Check, Terminal, Zap } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import {
-  SiAndroid,
   SiAngular,
   SiAntdesign,
-  SiApple,
   SiBootstrap,
   SiCss,
-  SiDotnet,
   SiFramework7,
   SiHtml5,
   SiIonic,
@@ -31,32 +28,6 @@ export function BrandMark({ compact = false }: { compact?: boolean }) {
   );
 }
 
-function MiniApp({ phone = false }: { phone?: boolean }) {
-  return (
-    <div className={`mini-app ${phone ? 'mini-app--phone' : ''}`}>
-      <div className="mini-app__top">
-        <span className="mini-app__logo"><BrandMark compact /></span>
-        <span className="mini-app__search" />
-        <span className="mini-app__avatar" />
-      </div>
-      <div className="mini-app__body">
-        <div className="mini-app__sidebar">
-          <i /><i /><i /><i />
-        </div>
-        <div className="mini-app__content">
-          <span className="mock-overline">WORKSPACE / 04</span>
-          <strong>One codebase.<br />Every screen.</strong>
-          <div className="mock-action">Run everywhere <span>→</span></div>
-          <div className="mock-panels">
-            <div><small>WEB</small><b>→</b><small>NATIVE</small></div>
-            <div className="mock-chart"><i /><i /><i /><i /><i /></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 const heroLayers = [
   '/hero_img_layer1.png',
   '/hero_img_layer2.png',
@@ -65,50 +36,13 @@ const heroLayers = [
 ];
 
 export function ProductVisual() {
+  const { t } = useTranslation();
   return (
-    <div className="hero-product" aria-label="Napacitor 产品分层概念图：Web 应用、.NET MAUI 运行时与多平台支持" role="img">
+    <div className="hero-product" aria-label={t('hero.productAlt')} role="img">
+
       {heroLayers.map((src) => (
         <img className="hero-layer" src={src} alt="" aria-hidden="true" key={src} />
       ))}
-    </div>
-  );
-}
-
-export function BootDevices({ replayKey = 0 }: { replayKey?: number }) {
-  return (
-    <div className="boot-stage" key={replayKey} aria-label="笔记本、平板电脑和手机依次启动 Napacitor 应用" role="img">
-      <div className="boot-stage__grid" aria-hidden="true" />
-      <svg className="boot-rays" viewBox="0 0 680 360" fill="none" aria-hidden="true">
-        <defs><linearGradient id="bootRay" x1="0" y1="0" x2="1" y2="0"><stop stopColor="#64f4d2"/><stop offset=".5" stopColor="#f5f871"/><stop offset="1" stopColor="#ff5cb8"/></linearGradient></defs>
-        <path className="boot-ray" d="M88 260C250 110 420 108 602 248" stroke="url(#bootRay)" strokeWidth="1.5" strokeDasharray="5 8" />
-      </svg>
-      <div className="boot-device-wrap boot-laptop-wrap">
-        <div className="boot-laptop">
-          <div className="boot-screen"><BootScreen /></div>
-          <div className="boot-laptop-base" />
-        </div>
-        <span>Windows / macOS</span>
-      </div>
-      <div className="boot-device-wrap boot-tablet-wrap">
-        <div className="boot-tablet"><div className="boot-screen"><BootScreen /></div></div>
-        <span>iPadOS / Android</span>
-      </div>
-      <div className="boot-device-wrap boot-phone-wrap">
-        <div className="boot-phone"><div className="boot-screen"><BootScreen /></div></div>
-        <span>iOS / Android</span>
-      </div>
-      <div className="boot-status" aria-hidden="true"><i /><span>RUNTIME READY</span></div>
-    </div>
-  );
-}
-
-function BootScreen() {
-  return (
-    <div className="boot-screen__content">
-      <BrandMark compact />
-      <b>Napacitor</b>
-      <div className="boot-progress"><i /></div>
-      <small>WEB → NATIVE</small>
     </div>
   );
 }
@@ -131,8 +65,10 @@ const techLogos = [
 ];
 
 export function TechLogoWall() {
+  const { t } = useTranslation();
   return (
-    <div className="tech-wall" aria-label="支持原生 Web 技术、主流框架和组件库">
+    <div className="tech-wall" aria-label={t('webFeature.wallLabel')}>
+
       <div className="tech-wall__signal" aria-hidden="true"><span>ANY WEB APP</span><i /></div>
       <div className="tech-grid">
         {techLogos.map(({ name, Icon, color, dark }, index) => (
@@ -142,7 +78,7 @@ export function TechLogoWall() {
           </div>
         ))}
       </div>
-      <p>以及你正在使用的下一套 Web 工具。</p>
+      <p>{t('webFeature.wallFooter')}</p>
     </div>
   );
 }
@@ -161,53 +97,36 @@ export function PluginDoodle({ type }: { type: string }) {
   return <svg className="plugin-doodle" viewBox="0 0 60 60" fill="none" aria-hidden="true"><g>{drawing}</g><g className="doodle-echo">{drawing}</g></svg>;
 }
 
-const cliCommands = [
-  ['nap init', '创建配置'],
-  ['nap add maui', '生成宿主'],
-  ['nap sync', '同步 Web + 插件'],
-  ['nap build', '构建目标'],
-  ['nap run', '运行应用'],
-];
-
-export function CliVisual() {
+function Doodle({ className, children }: { className: string; children: React.ReactNode }) {
   return (
-    <div className="cli-visual" aria-label="Napacitor CLI 自动化命令链">
-      <div className="cli-window">
-        <div className="cli-window__bar"><span><Terminal size={15} /> project / terminal</span><i /><i /><i /></div>
-        <div className="cli-flow">
-          {cliCommands.map(([command, description], index) => (
-            <div className="cli-command" key={command} style={{ '--command-index': index } as React.CSSProperties}>
-              <span className="cli-command__check"><Check size={13} /></span>
-              <code><i>$</i> npx {command}</code>
-              <small>{description}</small>
-            </div>
-          ))}
-        </div>
-        <div className="cli-result"><span><i /> PROCESS COMPLETE</span><code>target: android · configuration: Release</code></div>
-      </div>
-      <div className="agent-note" aria-hidden="true">
-        <div><Zap size={17} /><span>AI AGENT / CI PIPELINE</span></div>
-        <p>同一条显式命令链，<br />人能读懂，自动化也能执行。</p>
-        <div className="agent-note__line"><i /><i /><i /></div>
-      </div>
-    </div>
+    <svg className={`plugin-doodle ${className}`} viewBox="0 0 60 60" fill="none" aria-hidden="true">
+      <g>{children}</g>
+      <g className="doodle-echo">{children}</g>
+    </svg>
   );
 }
 
-export function EcosystemVisual() {
-  return (
-    <div className="ecosystem-visual" aria-label="JavaScript 与 .NET 生态通过 Napacitor 桥接">
-      <div className="eco-orbit eco-orbit--one" aria-hidden="true" />
-      <div className="eco-orbit eco-orbit--two" aria-hidden="true" />
-      <div className="eco-node eco-node--js"><SiJavascript size={34} color="#F7DF1E" /><strong>JavaScript</strong><span>npm · TypeScript · Web</span></div>
-      <div className="eco-node eco-node--dotnet"><SiDotnet size={38} color="#A390F2" /><strong>.NET</strong><span>C# · MAUI · Volo.Abp</span></div>
-      <div className="eco-bridge"><BrandMark compact /><span>JSInterop</span><i>⇄</i><b>NAP</b></div>
-      <span className="eco-token eco-token--one">React</span>
-      <span className="eco-token eco-token--two">Volo.Abp</span>
-      <span className="eco-token eco-token--three">npm</span>
-      <span className="eco-token eco-token--four">.NET MAUI</span>
-    </div>
-  );
+export function CapabilityDoodle({ type }: { type: 'web' | 'native' | 'dotnet' }) {
+  const drawing = (() => {
+    switch (type) {
+      case 'web': return <><circle cx="30" cy="30" r="19" /><ellipse cx="30" cy="30" rx="8.5" ry="19" /><path d="M11 30h38M14 21h32M14 39h32" /></>;
+      case 'native': return <><rect x="20" y="20" width="20" height="20" rx="3" /><rect x="26.5" y="26.5" width="7" height="7" rx="1" /><path d="M26 20v-6M34 20v-6M26 40v6M34 40v6M20 26h-6M20 34h-6M40 26h6M40 34h6" /></>;
+      default: return <><path d="M23 21l-9 9 9 9M37 21l9 9-9 9M33 16l-6 28" /></>;
+    }
+  })();
+  return <Doodle className="capability-doodle">{drawing}</Doodle>;
+}
+
+export function DocDoodle({ type }: { type: string }) {
+  const drawing = (() => {
+    switch (type) {
+      case 'start': return <path d="M33 5L8 35h22L28 55 53 25H30l3-20z" />;
+      case 'cli': return <><rect x="9" y="14" width="42" height="32" rx="3" /><path d="M18 26l6 5-6 5M30 36h12" /></>;
+      case 'api': return <><path d="M22 11v10M38 11v10" /><path d="M16 21h28v6a14 14 0 0 1-28 0z" /><path d="M30 41v8" /></>;
+      default: return <><rect x="15" y="11" width="30" height="38" rx="3" /><path d="M23 24h14M23 32h14M23 40h9" /></>;
+    }
+  })();
+  return <Doodle className="doc-doodle">{drawing}</Doodle>;
 }
 
 const heroPlatformIcons = [
@@ -230,30 +149,16 @@ const heroPlatformIcons = [
 ];
 
 export function HeroPlatforms() {
+  const { t } = useTranslation();
   return (
-    <div className="hero-platforms" aria-label="支持 Android、iOS、macOS 与 Windows 平台">
+    <div className="hero-platforms" aria-label={t('hero.platformsLabel')}>
+
       {heroPlatformIcons.map(({ name, path }) => (
         <span className="hero-platform" key={name}>
           <svg viewBox="0 0 1024 1024" fill="currentColor" aria-hidden="true"><path d={path} /></svg>
           {name}
         </span>
       ))}
-    </div>
-  );
-}
-
-export function PlatformVisual() {
-  return (
-    <div className="platform-visual" aria-label="Android、iOS、Windows 与 macOS 多平台支持">
-      <div className="platform-halo" aria-hidden="true" />
-      <div className="platform-device platform-device--desktop">
-        <div className="platform-device__screen"><MiniApp /></div><div className="platform-device__stand" />
-      </div>
-      <div className="platform-device platform-device--phone"><MiniApp phone /></div>
-      <div className="platform-os platform-os--android"><SiAndroid size={20} color="#64F4D2" /><span>Android</span></div>
-      <div className="platform-os platform-os--apple"><SiApple size={20} color="#F7F4FF" /><span>iOS · macOS</span></div>
-      <div className="platform-os platform-os--windows"><svg width="19" height="19" viewBox="0 0 24 24" fill="#75B9FF" aria-hidden="true"><path d="M2 4.5 11 3v8H2zm11-1.7L22 1v10h-9zM2 13h9v8l-9-1.5zm11 0h9v10l-9-1.8z"/></svg><span>Windows</span></div>
-      <div className="platform-runtime"><BrandMark compact /><span>ONE C# RUNTIME</span></div>
     </div>
   );
 }

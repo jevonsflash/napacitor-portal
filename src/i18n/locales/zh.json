@@ -1,0 +1,152 @@
+{
+  "meta": {
+    "title": "Napacitor | 跨平台原生运行时"
+  },
+  "common": {
+    "skipLink": "跳到主要内容",
+    "homeLabel": "Napacitor 首页",
+    "mainNav": "主导航",
+    "themeToLight": "切换到亮色主题",
+    "themeToDark": "切换到暗色主题",
+    "menuClose": "关闭导航菜单",
+    "menuOpen": "打开导航菜单",
+    "languageToggle": "切换语言",
+    "docs": "开发文档",
+    "github": "GitHub"
+  },
+  "nav": {
+    "quickstart": "快速开始",
+    "capabilities": "核心能力",
+    "scenarios": "行业场景"
+  },
+  "hero": {
+    "titleLine2": "基于 .NET MAUI 的 Web 应用跨平台原生运行时",
+    "description": "使用现代 Web 工具链，为 Android、iOS、Windows 和 macOS 构建高性能原生应用——由单一 C# 运行时驱动所有平台。",
+    "quickstart": "快速开始",
+    "browseDocs": "浏览开发文档",
+    "platformsLabel": "支持 Android、iOS、macOS 与 Windows 平台",
+    "productAlt": "Napacitor 产品分层概念图：Web 应用、.NET MAUI 运行时与多平台支持"
+  },
+  "quickstart": {
+    "title": "快速开始",
+    "bash": "bash",
+    "copy": "复制命令",
+    "copied": "已复制",
+    "copyStep": "复制第 {{step}} 步命令",
+    "copiedStatus": "第 {{step}} 步命令已复制",
+    "steps": {
+      "01": { "title": "将Napacitor插入任何现有的 Web 应用中。" },
+      "02": {
+        "title": "初始化，同步，创建原生运行环境",
+        "description": "指定应用 ID、名称和 Web 产物目录。Napacitor 会生成一份 MAUI 工程，并自动打包插件。"
+      },
+      "03": {
+        "title": "运行到任何平台",
+        "description": "选择目标平台，可选 android / ios / maccatalyst / windows。"
+      }
+    }
+  },
+  "capabilities": {
+    "title": "核心能力",
+    "description": "用你熟悉的 Web 技术构建应用——同样运行于 iOS、Android 与 Web，访问各平台的原生 SDK，并以 .NET 生态赋能原生层。",
+    "items": {
+      "web": {
+        "title": "通用应用",
+        "description": "构建能够在 iOS、Android 以及渐进式 Web 应用上同样运行的、基于 Web 的应用程序。"
+      },
+      "native": {
+        "title": "原生访问",
+        "description": "在每个平台上访问完整的原生 SDK，并轻松部署到 App Store、Google Play 或 Microsoft Store。"
+      },
+      "dotnet": {
+        "title": ".NET 赋能",
+        "description": "界面层继续使用 npm、TypeScript 与你熟悉的框架；原生引入 C# 生态和工程实践。"
+      }
+    }
+  },
+  "webFeature": {
+    "title": "兼容任意 Web 构建",
+    "titleAccent": "无需更换现有技术栈",
+    "p1": "原生 JavaScript、HTML、CSS，或 React、Angular、Vue——只要它能构建为 Web 产物，就能进入 Napacitor 的原生宿主。",
+    "p2": "继续使用 Ant Design Mobile、Ionic、Framework7，也可以选择 MUI、Bootstrap、Tailwind CSS、Vuetify、Quasar 等你熟悉的组件生态。",
+    "templates": "查看应用模板",
+    "wallLabel": "支持原生 Web 技术、主流框架和组件库",
+    "wallFooter": "以及你正在使用的下一套 Web 工具。"
+  },
+  "plugins": {
+    "title": "插件系统",
+    "description": "每个官方插件都把 .NET MAUI 原生 API 包装为一致、基于 Promise 的 JavaScript 接口。你也可以按需创建自定义插件",
+    "browseAll": "浏览全部官方插件",
+    "items": {
+      "camera": { "description": "拍照、录像与媒体选择，用一致的 Promise API 调用系统能力。" },
+      "geolocation": { "description": "获取当前位置，并持续跟踪设备的位置变化。" },
+      "filesystem": { "description": "访问应用目录、打包文件与系统文件选择器。" },
+      "preferences": { "description": "用轻量键值存储保存应用设置与用户偏好。" },
+      "share": { "description": "唤起系统分享面板，把内容自然交给其他应用。" },
+      "clipboard": { "description": "读写系统剪贴板，在应用之间传递文本。" }
+    }
+  },
+  "docs": {
+    "title": "接下来..",
+    "items": {
+      "install": { "title": "安装 Napacitor", "description": "从环境准备到第一次运行，完成首个 Napacitor 应用。" },
+      "cli": { "title": "CLI 参考", "description": "init、sync、build、run 与 assets 的完整命令和参数。" },
+      "apis": { "title": "插件 API", "description": "浏览官方插件的 TypeScript 接口与平台行为。" }
+    }
+  },
+  "scenarios": {
+    "tag": "适用场景 · {{industry}}",
+    "items": {
+      "enterprise": {
+        "industry": "企业内部系统",
+        "title": "一套业务前端，覆盖工位与外勤",
+        "description": "复用现有 Web 表单与业务界面，让桌面客户端和移动终端共享同一套产品逻辑。"
+      },
+      "industrial": {
+        "industry": "工业现场",
+        "title": "把设备能力带到触控终端",
+        "description": "通过设备、文件与传感器插件，让熟悉的 Web 界面连接真实现场。"
+      },
+      "retail": {
+        "industry": "零售门店",
+        "title": "从收银桌面到店员平板",
+        "description": "统一门店界面与交互，在不同屏幕之间延续一致的使用体验。"
+      },
+      "education": {
+        "industry": "教育内容",
+        "title": "让课程应用走进更多课堂",
+        "description": "把既有课程内容与互动页面带到课堂平板、学生手机和家用电脑。"
+      },
+      "productivity": {
+        "industry": "效率工具",
+        "title": "Web 迭代速度，桌面能力边界",
+        "description": "用 JavaScript 快速演进界面，用 .NET 连接文件、窗口与系统服务。"
+      },
+      "engineering": {
+        "industry": "团队工程化",
+        "title": "把跨平台交付写进自动化",
+        "description": "让 CLI 进入脚本与 CI，重复执行同步、构建、清理和运行。"
+      }
+    }
+  },
+  "cta": {
+    "line1": "现在使用Napacitor，",
+    "line2": "为你的Web应用集成原生能力",
+    "github": "在 GitHub 查看"
+  },
+  "footer": {
+    "product": "产品",
+    "resources": "资源",
+    "project": "项目",
+    "napacitor": "Napacitor",
+    "vcontrol": "V-Control 开箱即用的 .NET MAUI 组件库",
+    "devDocs": "Napacitor开发文档",
+    "mauiDocs": ".NET Multi-Platform App UI 文档",
+    "starters": "Starters",
+    "issues": "问题反馈",
+    "releases": "版本发布",
+    "rights": "© 2026 Napacitor. 保留所有权利。",
+    "icp": "ICP 粤ICP备19056721号",
+    "backToTop": "回到顶部 ↑"
+  }
+}
