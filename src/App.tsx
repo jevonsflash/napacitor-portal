@@ -43,11 +43,11 @@ function App() {
   const root = useRef<HTMLDivElement>(null);
   const { t, i18n } = useTranslation();
   const [theme, setTheme] = useState<Theme>(() => {
-    if (typeof window === 'undefined') return 'dark';
+    if (typeof window === 'undefined') return 'light';
     try {
-      return window.localStorage.getItem('napacitor-theme') === 'light' ? 'light' : 'dark';
+      return window.localStorage.getItem('napacitor-theme') === 'dark' ? 'dark' : 'light';
     } catch {
-      return 'dark';
+      return 'light';
     }
   });
   const [menuOpen, setMenuOpen] = useState(false);
@@ -287,7 +287,6 @@ function App() {
               <h2>{t('webFeature.title')}<br /><span className="text-color">{t('webFeature.titleAccent')}</span></h2>
               <p>{t('webFeature.p1')}</p>
               <p>{t('webFeature.p2')}</p>
-              <a className="text-link text-link--dark" href={docLink('/main/getting-started/templates')} target="_blank" rel="noreferrer">{t('webFeature.templates')} <ArrowUpRight size={16} /></a>
             </div>
             <div data-reveal-media><TechLogoWall /></div>
           </div>
@@ -306,7 +305,14 @@ function App() {
                 </a>
               ))}
             </div>
-            <a className="feature-more" href={docLink('/apis')} target="_blank" rel="noreferrer">{t('plugins.browseAll')} <ArrowRight size={16} /></a>
+            <div className="feature-actions">
+              <a className="button button--primary" href={docLink('/apis')} target="_blank" rel="noreferrer">
+                {t('plugins.browseAll')} <ArrowRight size={17} />
+              </a>
+              <a className="button button--primary" href={docLink('/plugins/tutorial/introduction')} target="_blank" rel="noreferrer">
+                {t('plugins.customizeGuide')} <ArrowRight size={17} />
+              </a>
+            </div>
           </div>
         </section>
 

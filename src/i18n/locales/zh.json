@@ -77,6 +77,7 @@
     "title": "插件系统",
     "description": "每个官方插件都把 .NET MAUI 原生 API 包装为一致、基于 Promise 的 JavaScript 接口。你也可以按需创建自定义插件",
     "browseAll": "浏览全部官方插件",
+    "customizeGuide": "查看如何自定义插件",
     "items": {
       "camera": { "description": "拍照、录像与媒体选择，用一致的 Promise API 调用系统能力。" },
       "geolocation": { "description": "获取当前位置，并持续跟踪设备的位置变化。" },
